@@ -6,7 +6,6 @@ from wikiedits.wiki import VANDALISM_REGEXES
 import WikiExtractor
 import re
 
-import sys
 
 HTML_TAG_REGEX = r'<[^>]{1,20}?>'
 
