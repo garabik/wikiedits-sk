@@ -20,7 +20,10 @@ class EditFilter(object):
                  edit_ratio=0.3,
                  min_chars=10):
 
-        self.segmenter = nltk.data.load('tokenizers/punkt/%s.pickle' % lang)
+        if lang=='slovak':
+            self.segmenter = nltk.data.load('tokenizers/punkt/czech.pickle')
+        else:
+            self.segmenter = nltk.data.load('tokenizers/punkt/%s.pickle' % lang)
 
         self.LEVENSHTEIN_RATIO_LOG_BASE = 20
 

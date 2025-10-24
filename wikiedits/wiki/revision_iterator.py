@@ -6,6 +6,8 @@ from wikiedits.wiki import VANDALISM_REGEXES
 import WikiExtractor
 import re
 
+import sys
+
 HTML_TAG_REGEX = r'<[^>]{1,20}?>'
 
 class RevisionIterator(object):
@@ -48,6 +50,8 @@ class RevisionIterator(object):
         return "\n".join(clean_html) if len(clean_html) > 0 else ""
 
     def __is_revert_vandalism(self, comment):
-        if type(comment) is str:
+        if comment is not None:
             return bool(self.vandalism_regex.search(comment))
-        return False
+        else:
+            return False
+

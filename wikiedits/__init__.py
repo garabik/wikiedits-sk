@@ -4,4 +4,6 @@ LANGUAGES = [
     'english',
     'polish',
     'german',
+    'slovak',
+    'ukrainian'
 ]
